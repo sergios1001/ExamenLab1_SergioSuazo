@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Normal extends Alumnos{
     private int nivel,conocimiento;
     private ArrayList<Examen> examenes=new ArrayList<Examen>();
+    private ArrayList<Examen> examenesPasados=new ArrayList<Examen>();
 
     public Normal() {
     }
@@ -22,6 +23,14 @@ public class Normal extends Alumnos{
 
     public void setNivel(int nivel) {
         this.nivel = nivel;
+    }
+
+    public ArrayList<Examen> getExamenesPasados() {
+        return examenesPasados;
+    }
+
+    public void setExamenesPasados(ArrayList<Examen> examenesPasados) {
+        this.examenesPasados = examenesPasados;
     }
 
     public int getConocimiento() {
