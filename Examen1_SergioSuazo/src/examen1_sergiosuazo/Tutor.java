@@ -4,7 +4,7 @@ package examen1_sergiosuazo;
 import java.util.ArrayList;
 
 public class Tutor extends Alumnos{
-    private ArrayList<String> clases=new ArrayList<>();
+    private ArrayList<Tutoria> clases=new ArrayList<>();
     private int ganancias,tutorias,nivel;
 
     public Tutor() {
@@ -17,11 +17,11 @@ public class Tutor extends Alumnos{
         this.nivel = nivel;
     }
 
-    public ArrayList<String> getClases() {
+    public ArrayList<Tutoria> getClases() {
         return clases;
     }
 
-    public void setClases(ArrayList<String> clases) {
+    public void setClases(ArrayList<Tutoria> clases) {
         this.clases = clases;
     }
 

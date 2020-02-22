@@ -1,6 +1,7 @@
 
 package examen1_sergiosuazo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Tutoria {
@@ -8,6 +9,7 @@ public class Tutoria {
     private int aula,hora,dia,año;
     private String clase,tema;
     private Date fecha;
+    private ArrayList<Alumnos> alumnos=new ArrayList<>();
 
     public Tutoria() {
     }
@@ -86,6 +88,15 @@ public class Tutoria {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public ArrayList<Alumnos> getAlumnos() {
+        return alumnos;
+    }
+
+    public void setAlumnos(ArrayList<Alumnos> alumnos) {
+        this.alumnos = alumnos;
+    }
+    
 
     @Override
     public String toString() {
