@@ -1,8 +1,10 @@
 
 package examen1_sergiosuazo;
 
-public class Alumnos {
-    private String nombre, carrera, lugar, user, contra;
+public abstract class Alumnos {
+
+    String nombre;
+    private String carrera, lugar, user, contra;
     private int cuenta,edad;
 
     public Alumnos() {
@@ -79,4 +81,5 @@ public class Alumnos {
         return "Alumnos{" + "nombre=" + nombre + ", carrera=" + carrera + ", lugar=" + lugar + ", user=" + user + ", contra=" + contra + ", cuenta=" + cuenta + ", edad=" + edad + '}';
     }
     
+    public abstract void DarTuto();
 }

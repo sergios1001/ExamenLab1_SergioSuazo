@@ -2,8 +2,12 @@
 package examen1_sergiosuazo;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+
 
 public class Normal extends Alumnos{
+    Random rand=new Random();
     private int nivel,conocimiento;
     private ArrayList<Examen> examenes=new ArrayList<Examen>();
     private ArrayList<Examen> examenesPasados=new ArrayList<Examen>();
@@ -52,6 +56,12 @@ public class Normal extends Alumnos{
     @Override
     public String toString() {
         return "Normal{" + "nivel=" + nivel + ", conocimiento=" + conocimiento + ", examenes=" + examenes + '}';
+    }
+
+    @Override
+    public void DarTuto() {
+        int r=1+rand.nextInt(99);
+        setConocimiento(conocimiento + r);
     }
     
 }

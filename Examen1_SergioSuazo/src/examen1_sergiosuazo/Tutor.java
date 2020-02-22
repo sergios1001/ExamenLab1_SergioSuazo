@@ -51,7 +51,13 @@ public class Tutor extends Alumnos{
 
     @Override
     public String toString() {
-        return "Tutor{" + "clases=" + clases + ", ganancias=" + ganancias + ", tutorias=" + tutorias + ", nivel=" + nivel + '}';
+        return nombre;
+    }
+
+    @Override
+    public void DarTuto() {
+        setGanancias(ganancias+270);
+        setTutorias(tutorias+1);
     }
     
     
