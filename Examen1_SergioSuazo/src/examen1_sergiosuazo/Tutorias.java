@@ -1002,6 +1002,10 @@ public class Tutorias extends javax.swing.JFrame {
             {
                 TutoresFrame.setVisible(true);
                 TutoresFrame.pack();
+                DefaultTableModel modelo=(DefaultTableModel) jt_tutores.getModel();
+                        for (int j = 0; j < modelo.getRowCount(); j++) {
+                            modelo.removeRow(j);
+                        }
                 for (int i = 0; i < alumnos.size(); i++) {
                     if(alumnos.get(i) instanceof Tutor)
                     {
@@ -1018,7 +1022,7 @@ public class Tutorias extends javax.swing.JFrame {
                             t.getNivel(),
                             t.getTutorias()
                         };
-                        DefaultTableModel modelo=(DefaultTableModel) jt_tutores.getModel();
+                        
                         modelo.addRow(newrow);
                         jt_tutores.setModel(modelo);
                     }
@@ -1028,6 +1032,10 @@ public class Tutorias extends javax.swing.JFrame {
             {
                 NormalFrame.setVisible(true);
                 NormalFrame.pack();
+                DefaultTableModel modelo=(DefaultTableModel) jt_normal.getModel();
+                        for (int j = 0; j < modelo.getRowCount(); j++) {
+                            modelo.removeRow(j);
+                        }
                 for (int i = 0; i < alumnos.size(); i++) {
                     if(alumnos.get(i) instanceof Normal)
                     {
@@ -1042,7 +1050,6 @@ public class Tutorias extends javax.swing.JFrame {
                             t.getLugar(),
                             t.getNivel()
                         };
-                        DefaultTableModel modelo=(DefaultTableModel) jt_normal.getModel();
                         modelo.addRow(newrow);
                         jt_normal.setModel(modelo);
                     }
@@ -1093,7 +1100,7 @@ public class Tutorias extends javax.swing.JFrame {
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
         DefaultTableModel modelo=(DefaultTableModel) jt_tutores.getModel();
-        modelo.setValueAt(tf_nombre.getText(),jt_tutores.getSelectedRow(), 0);  
+        modelo.setValueAt(tf_nombreM.getText(),jt_tutores.getSelectedRow(), 0);  
         modelo.setValueAt(tf_carreraM.getText(),jt_tutores.getSelectedRow(), 1);
         modelo.setValueAt((int)js_edadM.getValue(),jt_tutores.getSelectedRow(), 2);
         modelo.setValueAt((int)js_cuentaM.getValue(),jt_tutores.getSelectedRow(), 3);
@@ -1107,14 +1114,14 @@ public class Tutorias extends javax.swing.JFrame {
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
         DefaultTableModel modelo=(DefaultTableModel) jt_normal.getModel();
-        modelo.setValueAt(tf_nombre.getText(),jt_normal.getSelectedRow(), 0);  
-        modelo.setValueAt(tf_carreraM.getText(),jt_normal.getSelectedRow(), 1);
-        modelo.setValueAt((int)js_edadM.getValue(),jt_normal.getSelectedRow(), 2);
-        modelo.setValueAt((int)js_cuentaM.getValue(),jt_normal.getSelectedRow(), 3);
-        modelo.setValueAt(tf_userM.getText(),jt_normal.getSelectedRow(), 4);
-        modelo.setValueAt(tf_contraM.getText(),jt_normal.getSelectedRow(), 5);
-        modelo.setValueAt(tf_lugarM.getText(),jt_normal.getSelectedRow(), 6);
-        modelo.setValueAt((int)js_enseñanza.getValue(),jt_normal.getSelectedRow(), 7);
+        modelo.setValueAt(tf_nombreM1.getText(),jt_normal.getSelectedRow(), 0);  
+        modelo.setValueAt(tf_carreraM1.getText(),jt_normal.getSelectedRow(), 1);
+        modelo.setValueAt((int)js_edadM1.getValue(),jt_normal.getSelectedRow(), 2);
+        modelo.setValueAt((int)js_cuentaM1.getValue(),jt_normal.getSelectedRow(), 3);
+        modelo.setValueAt(tf_userM1.getText(),jt_normal.getSelectedRow(), 4);
+        modelo.setValueAt(tf_contraM1.getText(),jt_normal.getSelectedRow(), 5);
+        modelo.setValueAt(tf_lugarM1.getText(),jt_normal.getSelectedRow(), 6);
+        modelo.setValueAt((int)js_enseñanza1.getValue(),jt_normal.getSelectedRow(), 7);
         jt_normal.setModel(modelo);
     }//GEN-LAST:event_jButton8MouseClicked
 
@@ -1137,16 +1144,23 @@ public class Tutorias extends javax.swing.JFrame {
         // TODO add your handling code here:
         Examenes.setVisible(true);
         Examenes.pack();
+        DefaultTableModel modelo=(DefaultTableModel) jt_normal.getModel();
+                        for (int j = 0; j < modelo.getRowCount(); j++) {
+                            modelo.removeRow(j);
+                        }
         for (int i = 0; i < ((Normal)actual).getExamenes().size(); i++) {
             Examen e = ((Normal)actual).getExamenes().get(i);
             Object[] newrow = {
                 e.getClase(),
                 e.getTema()
             };
-            DefaultTableModel modelo=(DefaultTableModel) jt_examenes.getModel();
             modelo.addRow(newrow);
             jt_examenes.setModel(modelo);
         }
+        DefaultTableModel modeloN=(DefaultTableModel) jt_pasados.getModel();
+                        for (int j = 0; j < modeloN.getRowCount(); j++) {
+                            modeloN.removeRow(j);
+                        }
         for (int i = 0; i < ((Normal)actual).getExamenesPasados().size(); i++) {
             Examen e = ((Normal)actual).getExamenesPasados().get(i);
             Object [] newrow = {
@@ -1154,9 +1168,8 @@ public class Tutorias extends javax.swing.JFrame {
                 e.getTema(),
                 e.getPuntaje()
             };
-            DefaultTableModel modelo=(DefaultTableModel) jt_examenes.getModel();
-            modelo.addRow(newrow);
-            jt_examenes.setModel(modelo);
+            modeloN.addRow(newrow);
+            jt_pasados.setModel(modeloN);
         }
         
     }//GEN-LAST:event_jButton9MouseClicked
@@ -1165,6 +1178,10 @@ public class Tutorias extends javax.swing.JFrame {
         // TODO add your handling code here:
         Reservar.setVisible(true);
         Reservar.pack();
+        DefaultTableModel modelo=(DefaultTableModel) jt_tutorias.getModel();
+                        for (int j = 0; j < modelo.getRowCount(); j++) {
+                            modelo.removeRow(j);
+                        }
         for (int i = 0; i < tutorias.size(); i++) {
             Tutoria t= tutorias.get(i);
             Object[] newrow = {
@@ -1173,18 +1190,18 @@ public class Tutorias extends javax.swing.JFrame {
                 t.getTutor(),
                 t.getFecha()
             };
-            DefaultTableModel modelo=(DefaultTableModel) jt_tutorias.getModel();
+            
             modelo.addRow(newrow);
             jt_tutorias.setModel(modelo);
         }
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+        DefaultComboBoxModel mod = new DefaultComboBoxModel();
         for (int i = 0; i < alumnos.size(); i++) {
             if(alumnos.get(i) instanceof Tutor)
             {
-                modelo.addElement(alumnos.get(i));
+                mod.addElement(alumnos.get(i));
             }
         }
-        cb_tutor.setModel(modelo);
+        cb_tutor.setModel(mod);
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
@@ -1207,6 +1224,7 @@ public class Tutorias extends javax.swing.JFrame {
             else
             {
                 JOptionPane.showMessageDialog(this, "Reprobo el examen");
+                Examenes.dispose();
             }
             
         }
@@ -1222,7 +1240,7 @@ public class Tutorias extends javax.swing.JFrame {
         {
             Tutoria t=tutorias.get(jt_tutorias.getSelectedRow());
             t.getAlumnos().add(actual);
-            Reservar.setVisible(false);
+            Reservar.dispose();
         }
         else
         {
@@ -1261,6 +1279,10 @@ public class Tutorias extends javax.swing.JFrame {
         // TODO add your handling code here:
         DarTutoria.setVisible(true);
         DarTutoria.pack();
+        DefaultTableModel modelo=(DefaultTableModel) jt_misTutos.getModel();
+                        for (int j = 0; j < modelo.getRowCount(); j++) {
+                            modelo.removeRow(j);
+                        }
         for (int i = 0; i < ((Tutor)actual).getClases().size(); i++) {
             Tutoria t = ((Tutor)actual).getClases().get(i);
             Object [] newrow = {
@@ -1268,7 +1290,7 @@ public class Tutorias extends javax.swing.JFrame {
                 t.getTema(),
                 t.getAula()
             };
-            DefaultTableModel modelo=(DefaultTableModel) jt_misTutos.getModel();
+            
             modelo.addRow(newrow);
             jt_misTutos.setModel(modelo);
         }
